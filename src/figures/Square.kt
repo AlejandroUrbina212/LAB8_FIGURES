@@ -10,13 +10,14 @@ class Square: Describable, Drawable {
         //empty constructor
     }
 
-    override fun descriptionRequest(){
+    override fun descriptionRequest(){ //solicita el lado del cuadrado
         println("Please enter the length of the side of the new square")
         val sideInput = readLine()!!.toInt()
         this.side = sideInput
     }
 
-    override fun draw(): String{
+    override fun draw(): String{ //Concatena en un string los asteriscos gracias a los ciclos que llegan hasta la longitud del lado del
+        //cuadrado, por cada casilla agrega un asterisco
         var squareString = ""
 
         for (i in 1..this.side){

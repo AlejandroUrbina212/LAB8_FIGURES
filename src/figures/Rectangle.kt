@@ -23,8 +23,8 @@ class Rectangle: Drawable,Describable {
     override fun draw(): String{
         var rectangleString = ""
 
-        for (i in 1..this.height){
-            for (i in 1..this.length){
+        for (i in 1..this.height){  //primer ciclo itera sobre el alto del triángulo
+            for (i in 1..this.length){ //por cada línea agrega un asterisco hasta llegar a la longitud del rectángulo
                 rectangleString += "* "
             }
             rectangleString+="\n"
