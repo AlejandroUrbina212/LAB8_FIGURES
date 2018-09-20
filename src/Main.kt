@@ -34,38 +34,48 @@ fun draw(drawable: Drawable){
 }
 
 fun main(args: Array<String>){
+    var wantsToContinue: Int
+
     do{
         println("Ingrese una opción del menú")
         println(menu(1))
 
-        var wantsToContinue = readLine()!!.toInt()
-
-        do {
-            println("Ingrese una opción de figura a dibujar")
-            print(menu(2))
-            var menuSelection = readLine()!!.toInt()
-
-            when(menuSelection) {
-                1 -> {
-                    val square = Square()
-                    requestDescription(square)
-                    draw(square)
+        wantsToContinue = readLine()!!.toInt()
 
 
-                }
-                2->{
-                    val rectangle = Rectangle()
-                    requestDescription(rectangle)
-                    draw(rectangle)
-                }
-                3->{
-                    val triangle = Triangle()
-                    requestDescription(triangle)
-                    draw(triangle)
-                }
+        when (wantsToContinue){
+            1->{
+                do {
+                    println("Ingrese una opción de figura a dibujar")
+                    print(menu(2))
+                    var menuSelection = readLine()!!.toInt()
+
+                    when(menuSelection) {
+                        1 -> {
+                            val square = Square()
+                            requestDescription(square)
+                            draw(square)
+                        }
+                        2->{
+                            val rectangle = Rectangle()
+                            requestDescription(rectangle)
+                            draw(rectangle)
+                        }
+                        3->{
+                            val triangle = Triangle()
+                            requestDescription(triangle)
+                            draw(triangle)
+                        }
+                        4->{
+
+                        }
+                    }
+
+                }while (menuSelection!=4)
             }
 
-        }while (menuSelection!=4)
+        }
+
 
     }while (wantsToContinue != 2)
 }
